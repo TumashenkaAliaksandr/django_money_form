@@ -77,43 +77,12 @@
                 <div id="navbar" class="navbar-nav-wrapper pull-right">
                     <ul class="nav navbar-nav navbar-right" id="responsive-menu">
                         <li {% if request.resolver_match.url_name == 'home' %}class="active"{% endif %}><a href="{% url 'webapp:home' %}">Home</a></li>
-                        <li>
-                            <div class="header-search">
-                                <a href="#" class="search-icon"><i class="fa fa-search"></i></a>
-                                <div class="search-box-wrap" style="display: none;">
-                                    <div class="searchform" role="search">
-                                        <form class="search-form" method="get" action=".">
-                                            <input type="text" name="s" id="s" placeholder="Search..." value="" class="search-field">
-                                            <input type="submit" class="search-submit" value="Search">
-                                        </form>
-                                    </div><!-- .searchform -->
-                                </div><!-- .search-box-wrap -->
-                            </div>
-                        </li>
-                        <li>
-                            <div class="get-quote">
-                                <a href="#" class="btn mt_btn_yellow">Get A Quote</a>
-                            </div>
-                        </li>
                     </ul>
                 </div><!--/.nav-collapse -->
 
                 <div class="shopping-main">
                     <div class="shopping-cart-holder">
                         <div class="shopping-cart-inner">
-                            <a itemprop="url" class="header-cart header-cart-svg-path" href="#">
-                                <span class="cart-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="17.998px" height="23.997px" viewBox="0 0 17.998 23.997" enable-background="new 0 0 17.998 23.997" xml:space="preserve">
-                                    <g>
-                                        <path fill="#121F38" d="M17.575,23.835H0.491V6.381h17.083V23.835z M1.234,23.092h15.598V7.123H1.234V23.092z M13.118,8.98h-0.743
-                                        V4.152c0-0.929-0.325-1.718-0.975-2.367c-0.65-0.65-1.439-0.976-2.368-0.976S7.315,1.135,6.666,1.785
-                                        c-0.65,0.649-0.975,1.438-0.975,2.367V8.98H4.948V4.152c0-1.145,0.395-2.112,1.184-2.901c0.789-0.79,1.756-1.185,2.901-1.185
-                                        c1.145,0,2.112,0.395,2.901,1.185c0.789,0.789,1.184,1.757,1.184,2.901V8.98z"></path>
-                                    </g>
-                                    <g>
-                                    </g>
-                                </svg></span>
-                                <span class="cart-number">1</span>
-                            </a>
                             <div class="shopping-cart-dropdown">
                                 <ul>
                                     <li>
