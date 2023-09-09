@@ -4736,3 +4736,21 @@ p.lt-pswrd{margin-bottom: 20px;}
    animation: none !important;
   }
 }
+
+
+#pagebanner {
+    background-image: url(../images/money_breadcump.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
+    /* Другие стили, которые вам могут понадобиться */
+}
+
+/* Настройте стили для текста внутри блока, если это необходимо */
+.page-title {
+    /* Ваши стили для текста */
+    color: white;
+}
+
+

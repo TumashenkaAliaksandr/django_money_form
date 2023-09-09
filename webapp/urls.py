@@ -4,12 +4,14 @@ from django.contrib.auth import views as auth_views
 
 
 from django_money_form import settings
-from webapp.views import index
+from webapp import views
+from webapp.views import *
 
 app_name = 'webapp'
 
 urlpatterns = [
-    path('', index, name='home'),
+    path('', views.index, name='home'),
+    path('process_payment/', views.process_payment, name='process_payment'),
 
 ]
 
