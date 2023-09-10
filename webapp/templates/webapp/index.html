@@ -4,7 +4,6 @@
 
 {% block content %}
 
-
     <!-- pagebanner -->
     <section id="pagebanner" class="pagebanner">
         <div class="page-title">
@@ -12,9 +11,6 @@
         </div>
     </section>
     <!-- End Pagebanner -->
-
-
-
 
     <!-- breadcrumb -->
     <div class="breadcrumb-main">
@@ -28,7 +24,6 @@
     </div>
     <!-- End breadcrumb -->
 
-    <script src="https://js.stripe.com/v3/"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -47,29 +42,22 @@
                 <div class="payment">
                     <form method="post" action="{% url 'webapp:process_payment' %}">
                         {% csrf_token %}
-                        <div class="form-group owner">
-                            <label for="id_owner">Owner</label>
-                            <input type="text" class="form-control" id="id_owner" name="owner">
+                        <div class="form-group">
+                            <label for="{{ form.owner.id_for_label }}">Owner</label>
+                            {{ form.owner }}
                         </div>
-                        <div class="form-group CVV">
-                            <label for="id_cvv">CVV</label>
-                            <input type="text" class="form-control" id="id_cvv" name="cvv">
+                        <div class="form-group">
+                            <label for="{{ form.cvv.id_for_label }}">CVV</label>
+                            {{ form.cvv }}
                         </div>
-                        <div class="form-group" id="card-number-field">
-                            <label for="id_cardNumber">Card Number</label>
-                            <input type="text" class="form-control" id="id_cardNumber" name="card_number">
+                        <div class="form-group">
+                            <label for="{{ form.card_number.id_for_label }}">Card Number</label>
+                            {{ form.card_number }}
                         </div>
                         <div class="form-group" id="expiration-date">
                             <label>Expiration Date</label>
-                            <select name="expiration_date_month" id="id_expiration_date_month">
-                                <option value="01">January</option>
-                                <!-- ... Остальные месяцы ... -->
-                            </select>
-
-                            <select name="expiration_date_year" id="id_expiration_date_year">
-                                <option value="16">2016</option>
-                                <!-- ... Остальные годы ... -->
-                            </select>
+                            {{ form.expiration_date_month }}
+                            {{ form.expiration_date_year }}
                         </div>
                         <div class="form-group" id="credit_cards">
                             <img src="https://bootstraptema.ru/snippets/form/2017/visa.jpg" id="visa">
@@ -87,6 +75,7 @@
     <script src="https://js.stripe.com/v3/"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 
 
 {% endblock %}
