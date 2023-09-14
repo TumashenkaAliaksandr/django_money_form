@@ -9,13 +9,13 @@ from .forms import PaymentForm  # Импортируйте форму PaymentFor
 stripe.api_key = settings.STRIPE_SECRET_KEY  # Замените 'your_stripe_api_key' на ваш ключ Stripe
 
 def index(request):
-    if request.method == 'POST' and request.session.get('payment_success'):
-        # Если был успешный платеж, отобразите сообщение об успешной оплате
-        return render(request, 'webapp/success_page.html')
-    else:
+    # if request.method == 'POST' and request.session.get('payment_success'):
+    #     # Если был успешный платеж, отобразите сообщение об успешной оплате
+    #     return render(request, 'webapp/success_page.html')
+    # else:
         # Иначе отобразите форму для оплаты
-        form = PaymentForm()
-        return render(request, 'webapp/index.html', {'form': form})
+    form = PaymentForm()
+    return render(request, 'webapp/index.html', {'form': form})
 
 @csrf_exempt
 def process_payment(request):
