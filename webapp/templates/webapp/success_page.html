@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'main/base.html' %}
 
-</body>
-</html>
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="alert alert-success">
+                    <h3>Payment Successful</h3>
+                    <p>Thank you for your payment.</p>
+                    <!-- Здесь вы можете добавить дополнительную информацию о заказе, если это необходимо -->
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
