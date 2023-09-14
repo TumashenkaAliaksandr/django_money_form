@@ -49,10 +49,10 @@ def process_payment(request):
                 )
 
                 # Обработка успешного платежа
-                return JsonResponse({'success': True, 'message': 'Payment successful.'})
+                return JsonResponse({'success': True, 'message': 'Payment successful. Your order has been confirmed.'})
             except stripe.error.StripeError as e:
                 # Обработка ошибок Stripe
-                return JsonResponse({'success': False, 'message': str(e)})
+                return JsonResponse({'success': False, 'message': f'Payment failed: {str(e)}'})
 
     else:
         form = PaymentForm()
